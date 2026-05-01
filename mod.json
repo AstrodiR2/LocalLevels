@@ -1,0 +1,14 @@
+{
+  "geode": "4.4.0",
+  "gd": {
+    "android": "2.2081"
+  },
+  "id": "astrodir2.locallevels",
+  "name": "LocalLevels",
+  "version": "v1.0.0",
+  "description": "Adds a button to browse only downloaded levels",
+  "developers": ["AstrodiR2"],
+  "links": {
+    "source": "https://github.com/AstrodiR2/LocalLevels"
+  }
+}
