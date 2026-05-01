@@ -1,26 +1,25 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
-#include <Geode/ui/GeodeUI.hpp>
 
 using namespace geode::prelude;
 
-class $modify(MenuLayer) {
+class $modify(MyMenuLayer, MenuLayer) {
     bool init() {
         if (!MenuLayer::init()) return false;
 
         auto winSize = CCDirector::get()->getWinSize();
 
-        auto btn = CCMenuItemSpriteExtra::create(
-            CCSprite::createWithSpriteFrameName("GJ_plainBtn_001.png"),
-            this,
-            menu_selector(MenuLayer::onLocalLevels)
-        );
-
         auto label = CCLabelBMFont::create("Local\nLevels", "bigFont.fnt");
         label->setScale(0.35f);
         label->setAlignment(kCCTextAlignmentCenter);
-        label->setPosition(btn->getContentSize() / 2);
+
+        auto btn = CCMenuItemSpriteExtra::create(
+            CCSprite::createWithSpriteFrameName("GJ_plainBtn_001.png"),
+            this,
+            menu_selector(MyMenuLayer::onLocalLevels)
+        );
         btn->addChild(label);
+        label->setPosition(btn->getContentSize() / 2);
 
         auto menu = CCMenu::create();
         menu->addChild(btn);
